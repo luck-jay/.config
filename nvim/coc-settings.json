@@ -1,0 +1,10 @@
+{
+	"coc.preferences.extensionUpdateCheck": "weekly",
+	"suggest.noselect": true,
+	"suggest.enablePreselect": false,
+	"coc.preferences.formatOnSaveFiletypes": [
+		"json",
+		"python"
+	],
+	"clangd.path": "/home/pyj/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd"
+}
