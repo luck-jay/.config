@@ -1,3 +1,10 @@
+"
+"    __  __  __   __  _   _  __     __  ___   __  __
+"   |  \/  | \ \ / / | \ | | \ \   / / |_ _| |  \/  |
+"   | |\/| |  \ V /  |  \| |  \ \ / /   | |  | |\/| |
+"   | |  | |   | |   | |\  |   \ V /    | |  | |  | |
+"   |_|  |_|   |_|   |_| \_|    \_/    |___| |_|  |_|
+"
 "基本配置
 set nocompatible
 filetype on
@@ -5,6 +12,8 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 set t_Co=256
+" 设置光标下方总有多余的五行
+set scrolloff=5
 " 设置leader键为空格
 let mapleader=" "
 "设置代码高亮
@@ -52,6 +61,8 @@ set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s)}
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 "打开状态栏标尺
 set ruler
+" 拼写检查
+map sp :set spell!<CR>
 "设置左分屏和下分屏
 map sj :set nosplitright<CR>:vsplit<CR>
 map si :set splitbelow<CR>:split<CR>
@@ -115,7 +126,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_theme='violet'
 let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
+let g:airlineextensions#tabline#enabled=1
 nmap <tab> :bn<CR>
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
@@ -169,16 +180,16 @@ let g:table_mode_corner='|'
 "=============
 
 let g:coc_global_extensions = [
-	\'coc-json',
-	\'coc-vimlsp',
-	\'coc-python',
-	\'coc-markdownlint',
-	\'coc-clangd',
-	\'coc-snippets',
-	\'coc-sh',
-	\'coc-java',
-	\'coc-html',
-	\'coc-css']
+    \'coc-json',
+    \'coc-vimlsp',
+    \'coc-python',
+    \'coc-markdownlint',
+    \'coc-clangd',
+    \'coc-snippets',
+    \'coc-sh',
+    \'coc-java',
+    \'coc-html',
+    \'coc-css']
 " TextEdit might fail if hidden is not set
 set hidden
 set updatetime=100
@@ -264,4 +275,4 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>#
