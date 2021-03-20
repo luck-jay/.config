@@ -12,6 +12,9 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 set t_Co=256
+" 设置自动加载和保存代码折叠
+au BufWinLeave * silent mkview
+au BufWinEnter * silent loadview
 " 设置光标下方总有多余的五行
 set scrolloff=5
 " 设置leader键为空格
@@ -116,6 +119,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
 " 代码补全插件
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" 代码片段
+Plug 'honza/vim-snippets'
 call plug#end()
 
 "=============
@@ -187,7 +192,6 @@ let g:coc_global_extensions = [
     \'coc-clangd',
     \'coc-snippets',
     \'coc-sh',
-    \'coc-java',
     \'coc-html',
     \'coc-css']
 " TextEdit might fail if hidden is not set
