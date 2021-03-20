@@ -13,8 +13,8 @@ filetype plugin on
 filetype plugin indent on
 set t_Co=256
 " 设置自动加载和保存代码折叠
+set foldmethod=manual
 au BufWinLeave * silent mkview
-au BufWinEnter * silent loadview
 " 设置光标下方总有多余的五行
 set scrolloff=5
 " 设置leader键为空格
@@ -37,11 +37,13 @@ set cursorline
 set wrap
 "让命令可以补全
 set wildmenu
-" 显示输入的命令
+"显示输入的命令
 set showcmd
 "设置使用backspace键可以回退到上一行
 set backspace=indent,eol,start
 "设置编码格式
+"let &termencoding=&encoding
+"set fileencodings=utf-8
 set encoding=utf-8
 set langmenu=zh_CN.UTF-8
 "设置搜索高亮
@@ -80,6 +82,8 @@ map <C-t> :NERDTreeToggle<CR>
 map tu :tabe<CR>
 map tj :-tabnext<CR>
 map tl :+tabnext<CR>
+"加载折叠
+map zz :loadview<CR>
 " 更改方向键
 noremap j h
 noremap k j
@@ -98,9 +102,11 @@ map <C-p> :MarkdownPreview<CR>
 map ; :
 "设置按大写T打开控制台
 map T :terminal<CR>h
+"打开函数列表
+map fl :TagbarToggle<CR>
 
 " 设置加载插件
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 " 显示文件树插件
 Plug 'preservim/nerdtree'
 " vim的一种配色方案
@@ -121,6 +127,7 @@ Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " 代码片段
 Plug 'honza/vim-snippets'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 "=============

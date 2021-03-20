@@ -19,6 +19,29 @@ jesseduffield/lazygit/state.yml
 /qBittorrent/
 QtProject.conf
 /fcitx/
+/Code - OSS/
 /微信/
+/Electron/
+/GIMP/
+/JetBrains/
+/Kingsoft/
+/QtProject/
+/VirtualBox/
+/obs-studio/
+/vlc/
+/pulse/
+/google-chrome/
+/flameshot/
+/cef_user_data/
+/Postman/
 
-flameshot/flameshot.ini
+Trolltech.conf
+pavucontrol.ini
+/nvim/.netrwhist
+
+
+
+nvim/coc-settings.json
+
+mimeapps.list
+CuteCom/CuteCom5.conf
