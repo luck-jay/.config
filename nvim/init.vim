@@ -14,7 +14,7 @@ filetype plugin indent on
 set t_Co=256
 " 设置自动加载和保存代码折叠
 set foldmethod=manual
-au BufWinLeave * silent mkview
+" au BufWinLeave * silent mkview
 " 设置光标下方总有多余的五行
 set scrolloff=5
 " 设置leader键为空格
@@ -103,7 +103,9 @@ map ; :
 "设置按大写T打开控制台
 map T :terminal<CR>h
 "打开函数列表
-map fl :TagbarToggle<CR>
+map fl :TagbarToggle<CR><C-w><C-w>
+"设置编译快捷键
+map <f5> :make<CR>
 
 " 设置加载插件
 call plug#begin('~/.config/nvim/plugged')
