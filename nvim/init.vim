@@ -107,6 +107,9 @@ map fl :TagbarToggle<CR><C-w><C-w>
 "设置编译快捷键
 map <f5> :make<CR>
 
+"共享剪切板
+set clipboard+=unnamedplus
+
 " 设置加载插件
 call plug#begin('~/.config/nvim/plugged')
 " 显示文件树插件
@@ -130,6 +133,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " 代码片段
 Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
+
 call plug#end()
 
 "=============
