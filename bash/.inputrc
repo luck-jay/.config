@@ -1,0 +1,5 @@
+# 补全时忽略大小写
+set completion-ignore-case on
+# 能够在命令行输入字符后使用方向键补全历史命令
+"\e[A": history-search-backward
+"\e[B": history-search-forward
